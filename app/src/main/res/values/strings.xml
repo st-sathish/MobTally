@@ -2,4 +2,9 @@
     <string name="app_name">MobTally</string>
     <string name="btn_skip">Skip</string>
     <string name="btn_login">Login</string>
+    <string name="item_group">Group</string>
+    <string name="item_ledger">Ledger</string>
+    <string name="item_vtype">Voucher Type</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item android:id="@+id/group"
+            android:title="@string/item_group"
+            android:icon="@drawable/group">
+        </item>
+        <item android:id="@+id/ledger"
+            android:title="@string/item_ledger"
+            android:icon="@drawable/ledger">
+        </item>
+        <item android:id="@+id/vtype"
+            android:title="@string/item_vtype"
+            android:icon="@drawable/vouchertype">
+        </item>
+
+    </group>
+
+</menu>
