@@ -1,11 +1,15 @@
 package com.kathreshtech.mobtally;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.material.navigation.NavigationView;
 import com.kathreshtech.mobtally.fragments.ComingSoonFragment;
+import com.kathreshtech.mobtally.fragments.CompanyFragment;
 import com.kathreshtech.mobtally.fragments.HomeFragment;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,9 +19,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-public class LandingActivity extends AppCompatActivity {
+public class LandingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final int HOME_FRAGMENT = 1;
+    public  static final int COMPANY_FRAGMENT = 2;
 
 
     @Override
@@ -66,6 +71,10 @@ public class LandingActivity extends AppCompatActivity {
             case HOME_FRAGMENT:
                 fragment = HomeFragment.newInstance(fragTitle);
                 break;
+
+            case COMPANY_FRAGMENT:
+                fragment = CompanyFragment.newInstance(fragTitle);
+                        break;
                 default:
                     fragment = ComingSoonFragment.newInstance(fragTitle);
                     break;
@@ -85,5 +94,15 @@ public class LandingActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+        switch (item.getItemId()) {
+            case R.id.menu_company :
+                displayFragment(LandingActivity.COMPANY_FRAGMENT, "Compnay List",true);
+                break;
+        }
+
+        return false;
+    }
 }
