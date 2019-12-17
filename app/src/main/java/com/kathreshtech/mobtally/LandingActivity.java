@@ -6,7 +6,9 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 import com.kathreshtech.mobtally.fragments.ComingSoonFragment;
-import com.kathreshtech.mobtally.fragments.CompanyFragment;
+import com.kathreshtech.mobtally.fragments.CompanyCreateFragment;
+import com.kathreshtech.mobtally.fragments.CompanyEditFragment;
+import com.kathreshtech.mobtally.fragments.CompanyListFragment;
 import com.kathreshtech.mobtally.fragments.HomeFragment;
 
 import androidx.annotation.NonNull;
@@ -16,13 +18,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class LandingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final int HOME_FRAGMENT = 1;
-    public  static final int COMPANY_FRAGMENT = 2;
+    public  static final int COMPANY_CREATE_FRAGMENT = 2;
+    public static final int COMPANY_EDIT_FRAGMENT = 3;
+    public static final int COMPANY_LIST_FRAGMENT = 4;
 
 
     @Override
@@ -72,9 +75,18 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
                 fragment = HomeFragment.newInstance(fragTitle);
                 break;
 
-            case COMPANY_FRAGMENT:
-                fragment = CompanyFragment.newInstance(fragTitle);
+            case COMPANY_CREATE_FRAGMENT:
+                fragment = CompanyCreateFragment.newInstance(fragTitle);
                         break;
+
+            case COMPANY_EDIT_FRAGMENT:
+                fragment = CompanyEditFragment.newInstance(fragTitle);
+                break;
+
+            case COMPANY_LIST_FRAGMENT:
+                fragment = CompanyListFragment.newInstance(fragTitle);
+                break;
+
                 default:
                     fragment = ComingSoonFragment.newInstance(fragTitle);
                     break;
@@ -99,7 +111,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
         switch (item.getItemId()) {
             case R.id.menu_company :
-                displayFragment(LandingActivity.COMPANY_FRAGMENT, "Compnay List",true);
+                displayFragment(LandingActivity.COMPANY_CREATE_FRAGMENT, "Compnay List",true);
                 break;
         }
 

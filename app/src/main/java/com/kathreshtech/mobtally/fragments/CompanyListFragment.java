@@ -11,23 +11,26 @@ import com.kathreshtech.mobtally.utils.AppConstants;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class ComingSoonFragment extends BaseFragment {
+public class CompanyListFragment extends BaseFragment {
 
-    public ComingSoonFragment(){}
+    public CompanyListFragment(){
 
-    public static ComingSoonFragment newInstance(String title){
-        ComingSoonFragment comingSoonFragment = new ComingSoonFragment();
+    }
+
+    public static CompanyListFragment newInstance(String title){
+        CompanyListFragment companyListFragment = new CompanyListFragment();
         Bundle bundle = new Bundle();
         bundle.putString(AppConstants.INTENT_PARAM_TITLE,title);
-        comingSoonFragment.setArguments(bundle);
-        return comingSoonFragment;
+        companyListFragment.setArguments(bundle);
+        return companyListFragment;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fr_comingsoon,container,false);
+
+        View view = inflater.inflate(R.layout.fr_company_list,container,false);
         return view;
     }
 

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kathreshtech.mobtally.R;
+import com.kathreshtech.mobtally.utils.AppConstants;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +18,7 @@ public class HomeFragment extends BaseFragment {
     public static HomeFragment newInstance(String title){
         HomeFragment homeFragment = new HomeFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("title",title);
+        bundle.putString(AppConstants.INTENT_PARAM_TITLE,title);
         homeFragment.setArguments(bundle);
         return homeFragment;
     }

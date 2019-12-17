@@ -10,33 +10,33 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.kathreshtech.mobtally.R;
+import com.kathreshtech.mobtally.utils.AppConstants;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CompanyFragment extends BaseFragment {
+public class CompanyCreateFragment extends BaseFragment {
 
 
-    public CompanyFragment() {
+    public CompanyCreateFragment() {
         // Required empty public constructor
     }
 
-    public static CompanyFragment newInstance(String title){
-        CompanyFragment companyFragment = new CompanyFragment();
+    public static CompanyCreateFragment newInstance(String title){
+        CompanyCreateFragment companyCreateFragment = new CompanyCreateFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("title",title);
-        companyFragment.setArguments(bundle);
-        return companyFragment;
+        bundle.putString(AppConstants.INTENT_PARAM_TITLE,title);
+        companyCreateFragment.setArguments(bundle);
+        return companyCreateFragment;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fr_company,container,false);
+        View view = inflater.inflate(R.layout.fr_company_create,container,false);
         return view;
     }
 
