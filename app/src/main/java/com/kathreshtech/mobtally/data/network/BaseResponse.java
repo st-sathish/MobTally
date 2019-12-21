@@ -1,8 +1,16 @@
 package com.kathreshtech.mobtally.data.network;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public abstract class BaseResponse {
 
+    @Expose
+    @SerializedName("code")
     private String code = "";
+
+    @Expose
+    @SerializedName("message")
     private String msg = "";
 
     public String getCode() {

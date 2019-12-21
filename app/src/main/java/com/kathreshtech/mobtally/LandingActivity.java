@@ -140,7 +140,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
         switch (item.getItemId()) {
             case R.id.menu_company :
-                displayFragment(LandingActivity.COMPANY_CREATE_FRAGMENT, "Compnay List",true);
+                displayFragment(LandingActivity.COMPANY_LIST_FRAGMENT, "Compnay List",true);
                 break;
         }
 

@@ -1,10 +1,15 @@
 package com.kathreshtech.mobtally.data.network;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompanyResponse {
+public class CompanyResponse extends BaseResponse {
 
+    @Expose
+    @SerializedName("data")
     private List<Company> companies = new ArrayList<>();
 
     public List<Company> getCompanies() {
@@ -17,6 +22,8 @@ public class CompanyResponse {
 
     public class Company{
 
+        @Expose
+        @SerializedName("name")
         private String name = "";
 
         public String getName() {
